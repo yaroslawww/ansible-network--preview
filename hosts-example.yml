@@ -1,0 +1,8 @@
+proxy:
+  hosts:
+    proxy_server:
+      ansible_host: my-proxy-host
+preview:
+  hosts:
+    preview_server:
+      ansible_host: my-preview-host
