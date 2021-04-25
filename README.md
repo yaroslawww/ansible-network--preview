@@ -33,11 +33,19 @@ cat /etc/ansible/ansible.cfg
 ansible all -i hosts.yml -m ping 
 # check connection with proxy group
 ansible proxy -i hosts.yml -m ping 
-# check distribution
+# check distribution and ip4
 ansible all -i hosts.yml -m setup -a "filter=*distribution*"
 ansible all -i hosts.yml -m setup -a "filter=*ipv4*"
 # check uptime
 ansible all -i hosts.yml -m command -a "uptime"
+# Display service facts
+ansible all -i hosts.yml -m service_facts
 ```
 
+
+### Check syntax before run
+```shell
+ansible-playbook -i hosts.yml playbook-proxy.yml --syntax-check
+ansible-playbook -i hosts.yml playbook-preview.yml --syntax-check
+```
 

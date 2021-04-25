@@ -1,0 +1,11 @@
+---
+- name: Update apt cache
+  package:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Install main packages
+  package:
+    name:
+      - software-properties-common
+    state: latest

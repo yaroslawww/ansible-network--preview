@@ -1,0 +1,12 @@
+---
+- name: Configure preview server
+  hosts:
+    - preview
+  gather_facts: yes
+  vars_files:
+    - ["vars/preview.yml", "vars/default-preview.yml"]
+  roles:
+    - role: common
+      tags: [ init, common-init ]
+      become: yes
+

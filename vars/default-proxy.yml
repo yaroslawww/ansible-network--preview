@@ -1,0 +1,3 @@
+# to create your custom variables from template please use nex command
+# > cp default-proxy.yml proxy.yml
+---

@@ -1,0 +1,19 @@
+---
+- name: Configure proxy server
+  hosts:
+    - proxy
+  gather_facts: yes
+  vars_files:
+    - ["vars/proxy.yml", "vars/default-proxy.yml"]
+  roles:
+    - role: common
+      tags: [ init, common-init ]
+      become: yes
+  tasks:
+    - debug:
+        var: test1
+    - debug:
+        var: test2
+    - debug:
+        var: test3
+
